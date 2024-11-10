@@ -13,7 +13,7 @@ ins : { x[y]:x[y]+1; x}
 // Part 1
 
 g : {[s] x : empty ins/ s; assoc[x?2]}
-f : {[s] hl : "i"$((count s) % 2); sum each g (hl sublist s; (hl;((count s) - hl)) sublist s)}
+f : {[s] hl : "i"$((count s) % 2); sum each g (s[(0;hl)]; s[(hl;(count s) - hl)])}
 sum f each inp
 
 // Part 2
